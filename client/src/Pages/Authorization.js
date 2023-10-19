@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import $api from "../http/api";
 
 const Authorization = ({ setToken }) => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const Authorization = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
+      const response = await $api.post(
         "/api/users/login",
         {
           user: {
