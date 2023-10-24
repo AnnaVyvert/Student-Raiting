@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const morgan = require('morgan')
 const errorHandler = require("./middleware/ErrorHandlingMiddleware");
-const cors = require("cors");
+const cors = require("./middleware/cors");
 const sequelize = require("./db");
 const basicAuth = require('express-basic-auth')
 const router = require("./routes/routes");
@@ -21,12 +21,13 @@ sync()
 // // }))
 // root
 app.use(morgan('tiny'))
-app.use(cors());
+app.use(cors);
 app.use(fileUpload());
 app.use(express.json());
 app.use("/api", router);
 app.use(errorHandler);
 
 app.listen(PORT,() => {
-  console.log(`Server running on http://localhost:8080`);
+  console.log(`Server running on http://localhost:${process.env.PORT}`);
+  console.log(`CORS setup to ${CLIENT_URL}`);
 })
