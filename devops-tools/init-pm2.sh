@@ -8,7 +8,7 @@ cd server
 pm2 start yarn --name student-rating-BE -- run dev
 
 cd ../client
-pm2 start yarn --name student-rating-FE -- run deploy:start
+pm2 start yarn --name student-rating-FE -- run deploy-add:start
 
 pm2 save
 
