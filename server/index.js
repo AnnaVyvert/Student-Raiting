@@ -29,5 +29,5 @@ app.use(errorHandler);
 
 app.listen(PORT,() => {
   console.log(`Server running on http://localhost:${process.env.PORT}`);
-  console.log(`CORS setup to ${CLIENT_URL}`);
+  console.log(`CORS setup to ${process.env.CLIENT_URL}`);
 })
