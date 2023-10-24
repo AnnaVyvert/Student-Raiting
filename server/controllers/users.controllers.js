@@ -44,10 +44,11 @@ class UsersController {
 
             if (!user) {
                 res.status(401)
-                throw new Error('Нет пользователя с этим идентификатором электронной почты')
+                throw new Error('1Нет пользователя с этим идентификатором электронной почты')
             }
 
             //Check if password matches
+            console.log(user.password, req.body.user.password);
             const passwordMatch = await matchPassword(user.password, req.body.user.password)
 
             if (!passwordMatch) {
