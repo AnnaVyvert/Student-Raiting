@@ -1,2 +1,5 @@
-export const PORT = `3002`
-export const API_URL = `http://213.171.8.130:${PORT}`
+import { loadEnv } from "vite";
+
+const env = loadEnv(mode, process.cwd(), "");
+
+export const API_URL = env.API_URL

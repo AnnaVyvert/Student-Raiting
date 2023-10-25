@@ -8,6 +8,7 @@ cd server
 pm2 start yarn --name student-rating-BE -- run dev
 
 cd ../client
+export DANGEROUSLY_DISABLE_HOST_CHECK=true # host port
 pm2 start yarn --name student-rating-FE -- run deploy-add:start
 
 pm2 save
