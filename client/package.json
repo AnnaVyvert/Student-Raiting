@@ -28,7 +28,6 @@
   "scripts": {
     "start": "react-scripts start",
     "deploy:start": "PORT=80 react-scripts start",
-    "deploy-add:start": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
